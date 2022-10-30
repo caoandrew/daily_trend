@@ -6,7 +6,6 @@ class Header extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Text> Home </Text> */}
         <StatusBar style="auto" />
       </View>
     )
