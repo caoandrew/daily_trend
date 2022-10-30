@@ -1,15 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Trend_Container from './Trend_Container.js';
+import Header from './Header.js'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Trend_Container trendDict={trendList[0]} />
-      <Trend_Container trendDict={trendList[1]} />
-      <Trend_Container trendDict={trendList[2]} />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Daily Trends" component={Header} />
+      </Stack.Navigator>
+      <View style={styles.container}>
+        <Trend_Container trendDict={trendList[0]} />
+        <Trend_Container trendDict={trendList[1]} />
+        <Trend_Container trendDict={trendList[2]} />
+        <StatusBar style="auto" />
+      </View>
+  </NavigationContainer>
   );
 }
 
