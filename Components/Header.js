@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet} from 'react-native'
+import { StatusBar } from 'expo-status-bar';
 
 class Header extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Home </Text>
+        {/* <Text> Home </Text> */}
+        <StatusBar style="auto" />
       </View>
     )
   }

@@ -1,19 +1,22 @@
 import React from "react";
+import { StyleSheet, Text, View } from 'react-native';
+import Header from './Components/Header.js'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { ScreenStack } from "react-native-screens";
-import Header from './Components/Header.js'
+// import SplashScreen from 'react-native-splash-screen'
 
-// https://www.geeksforgeeks.org/react-native-configuring-header-bar/
+// https://www.waldo.com/blog/react-native-header
 
 const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Header />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Daily Trends" component={Header} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
