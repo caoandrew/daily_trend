@@ -1,15 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Trend_Container from './Trend_Container.js';
+import Header from './Header.js';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Trend_Container trendDict={trendList[0]} />
-      <Trend_Container trendDict={trendList[1]} />
-      <Trend_Container trendDict={trendList[2]} />
-      <StatusBar style="auto" />
-    </View>
+    <><View style={styles.bar}>
+      <StatusBar/>
+      <Header title="Daily Trends" backgroundColor="FFFFFF" />
+    </View><View style={styles.container}>
+        {/* <Header /> */}
+        <Trend_Container trendDict={trendList[0]} />
+        <Trend_Container trendDict={trendList[1]} />
+        <Trend_Container trendDict={trendList[2]} />
+        <StatusBar style="auto" />
+      </View></>
   );
 }
 
@@ -20,6 +25,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'top',
   },
+  bar: {
+    backgroundColor: "#FFFFFF", // TO CHANGE
+    barStyle: "dark-content",
+    flex: 0.1
+  }
 });
 
 const spotify = {
